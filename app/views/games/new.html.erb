@@ -1,0 +1,23 @@
+<div class="container text-left mt-5">
+  <h1>
+    <p class="text-left">New Game</p>
+    <% @random_letters.each do |letter| %>
+      <span class="badge badge-primary mr-2"><%= letter.upcase %></span>
+    <% end %>
+  </h1>
+</div>
+<div class="container mt-5">
+  <div class="row justify-content-left">
+    <div class="col-md-6">
+      <div class="ml-3">
+        <%= form_tag score_path, method: :get do %>
+          <div class="form-group">
+            <%= label_tag :question, "What is the longest word that you can find?" %>
+            <%= text_field_tag :answer, nil, class: "form-control" %>
+          </div>
+          <%= submit_tag "Play", class: "btn btn-danger mt-2" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
